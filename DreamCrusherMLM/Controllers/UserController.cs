@@ -861,5 +861,33 @@ namespace DreamCrusherMLM.Controllers
             }
             return Json(obj, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult IDCard()
+        {
+            DashBoard obj = new DashBoard();
+           
+            obj.Fk_UserId = Session["Pk_UserId"].ToString();
+            DataSet ds = obj.GetIDCard();
+           
+            if (ds != null && ds.Tables[0].Rows.Count > 0)
+            {
+
+               
+                ViewBag.Recognition = ds.Tables[0].Rows[0]["Recognition"].ToString();
+                ViewBag.LoginId = ds.Tables[0].Rows[0]["LoginId"].ToString();
+                ViewBag.DisplayName = ds.Tables[0].Rows[0]["Fullname"].ToString();
+                 ViewBag.fullname = ds.Tables[0].Rows[0]["Fullname"].ToString();
+                ViewBag.profilepic = ds.Tables[0].Rows[0]["ProfilePic"].ToString();
+                ViewBag.Address = ds.Tables[0].Rows[0]["FullAddress"].ToString();
+                ViewBag.Email = ds.Tables[0].Rows[0]["Email"].ToString();
+                ViewBag.Mobile = ds.Tables[0].Rows[0]["Mobile"].ToString();
+                ViewBag.FirstName = ds.Tables[0].Rows[0]["FirstName"].ToString();
+                
+
+            }
+            
+        
+            return View(obj);
+        }
     }
 }
