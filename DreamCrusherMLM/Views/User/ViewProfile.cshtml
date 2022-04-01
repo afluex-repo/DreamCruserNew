@@ -7,13 +7,16 @@
 <!-- /.row -->
 @using (Html.BeginForm("ViewProfile", "User", FormMethod.Post, new { @id = "form1", enctype = "multipart/form-data" }))
 {
-
-    
-            <div class="section-header">
+     <div class="section-header">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                         <div class="section-header-breadcrumb-content">
                             <h1>View Profile</h1>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                        <div class="section-header-breadcrumb-content">
+                            <h1><a href="/user/IDCard" class="btn btn-primary pull-right" target="_blank">ID Card</a></h1>
                         </div>
                     </div>
 
