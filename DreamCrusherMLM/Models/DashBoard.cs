@@ -65,7 +65,14 @@ namespace DreamCrusherMLM.Models
             DataSet ds = DBHelper.ExecuteQuery("InsertMessage", para);
             return ds;
         }
-
+        public DataSet GetIDCard()
+        {
+            SqlParameter[] para = {
+                                       new SqlParameter("@FK_UserID", Fk_UserId)
+                                  };
+            DataSet ds = DBHelper.ExecuteQuery("IDCard", para);
+            return ds;
+        }
         public string ProfilePic { get; set; }
 
         public string MemberName { get; set; }
